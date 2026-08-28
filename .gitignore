@@ -12,3 +12,6 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+repowiki/.meta/search_index.json
+repowiki/.meta/retrieval_stats.db
+repowiki/.meta/telemetry-local/
