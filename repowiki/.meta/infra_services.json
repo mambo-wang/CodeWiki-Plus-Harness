@@ -1,12 +1,1 @@
-{
-  "codewiki": {
-    "name": "codewiki",
-    "ports": [],
-    "depends_on": [],
-    "env_vars": {
-      "PYTHONPATH": "/app",
-      "PYTHONUNBUFFERED": "1"
-    },
-    "source": "docker-compose"
-  }
-}
+{}
