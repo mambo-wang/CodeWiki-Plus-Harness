@@ -1,4 +1,4 @@
-# bootstrap.ps1 — 初始化 Harness 工作区：克隆全部业务子仓
+﻿# bootstrap.ps1 — 初始化 Harness 工作区：克隆全部业务子仓
 # 用法：在本仓根目录执行 .\bootstrap.ps1
 # 幂等：已存在的目录自动跳过，可重复执行。
 
