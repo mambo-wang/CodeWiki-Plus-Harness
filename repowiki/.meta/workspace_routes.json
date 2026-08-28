@@ -1,0 +1,122 @@
+[
+  {
+    "route_key": "__mq__celery__extract_mq_routes",
+    "protocol": "mq",
+    "method": null,
+    "path": "extract_mq_routes",
+    "role": "server",
+    "component_id": "codewiki-plus\\codewiki\\src\\be\\dependency_analyzer\\analyzers\\route_extractors\\mq_patterns.py::_Pattern.extract_mq_routes",
+    "repo_name": "codewiki-plus",
+    "file_path": "D:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness\\codewiki-plus\\codewiki\\src\\be\\dependency_analyzer\\analyzers\\route_extractors\\mq_patterns.py",
+    "line_number": 184,
+    "framework": "celery",
+    "extra": {
+      "broker": "celery",
+      "topic": "extract_mq_routes"
+    }
+  },
+  {
+    "route_key": "__route__GET__/",
+    "protocol": "http",
+    "method": "GET",
+    "path": "/",
+    "role": "server",
+    "component_id": "codewiki-plus\\codewiki\\src\\fe\\visualise_docs.py::index",
+    "repo_name": "codewiki-plus",
+    "file_path": "D:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness\\codewiki-plus\\codewiki\\src\\fe\\visualise_docs.py",
+    "line_number": 117,
+    "framework": "fastapi",
+    "extra": {}
+  },
+  {
+    "route_key": "__route__GET__/}",
+    "protocol": "http",
+    "method": "GET",
+    "path": "/}",
+    "role": "server",
+    "component_id": "codewiki-plus\\codewiki\\src\\fe\\visualise_docs.py::serve_doc",
+    "repo_name": "codewiki-plus",
+    "file_path": "D:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness\\codewiki-plus\\codewiki\\src\\fe\\visualise_docs.py",
+    "line_number": 154,
+    "framework": "fastapi",
+    "extra": {}
+  },
+  {
+    "route_key": "__route__GET__/",
+    "protocol": "http",
+    "method": "GET",
+    "path": "/",
+    "role": "server",
+    "component_id": "codewiki-plus\\codewiki\\src\\fe\\web_app.py::index_get",
+    "repo_name": "codewiki-plus",
+    "file_path": "D:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness\\codewiki-plus\\codewiki\\src\\fe\\web_app.py",
+    "line_number": 38,
+    "framework": "fastapi",
+    "extra": {}
+  },
+  {
+    "route_key": "__route__POST__/",
+    "protocol": "http",
+    "method": "POST",
+    "path": "/",
+    "role": "server",
+    "component_id": "codewiki-plus\\codewiki\\src\\fe\\web_app.py::index_post",
+    "repo_name": "codewiki-plus",
+    "file_path": "D:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness\\codewiki-plus\\codewiki\\src\\fe\\web_app.py",
+    "line_number": 44,
+    "framework": "fastapi",
+    "extra": {}
+  },
+  {
+    "route_key": "__route__GET__/api/job/{}",
+    "protocol": "http",
+    "method": "GET",
+    "path": "/api/job/{}",
+    "role": "server",
+    "component_id": "codewiki-plus\\codewiki\\src\\fe\\web_app.py::get_job_status",
+    "repo_name": "codewiki-plus",
+    "file_path": "D:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness\\codewiki-plus\\codewiki\\src\\fe\\web_app.py",
+    "line_number": 50,
+    "framework": "fastapi",
+    "extra": {}
+  },
+  {
+    "route_key": "__route__GET__/docs/{}",
+    "protocol": "http",
+    "method": "GET",
+    "path": "/docs/{}",
+    "role": "server",
+    "component_id": "codewiki-plus\\codewiki\\src\\fe\\web_app.py::view_docs",
+    "repo_name": "codewiki-plus",
+    "file_path": "D:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness\\codewiki-plus\\codewiki\\src\\fe\\web_app.py",
+    "line_number": 56,
+    "framework": "fastapi",
+    "extra": {}
+  },
+  {
+    "route_key": "__route__GET__/static-docs/{}",
+    "protocol": "http",
+    "method": "GET",
+    "path": "/static-docs/{}",
+    "role": "server",
+    "component_id": "codewiki-plus\\codewiki\\src\\fe\\web_app.py::serve_generated_docs",
+    "repo_name": "codewiki-plus",
+    "file_path": "D:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness\\codewiki-plus\\codewiki\\src\\fe\\web_app.py",
+    "line_number": 63,
+    "framework": "fastapi",
+    "extra": {}
+  },
+  {
+    "route_key": "__route__GET__/static-docs/{}/{}}",
+    "protocol": "http",
+    "method": "GET",
+    "path": "/static-docs/{}/{}}",
+    "role": "server",
+    "component_id": "codewiki-plus\\codewiki\\src\\fe\\web_app.py::serve_generated_docs",
+    "repo_name": "codewiki-plus",
+    "file_path": "D:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness\\codewiki-plus\\codewiki\\src\\fe\\web_app.py",
+    "line_number": 63,
+    "framework": "fastapi",
+    "extra": {}
+  }
+]
