@@ -1,0 +1,10 @@
+{
+  "host": "http://10.142.150.38",
+  "backendPort": "8082",
+  "frontendPort": "80",
+  "username": "",
+  "password": "",
+  "accessToken": "", //不用填
+  "refreshToken": "", //不用填
+  "accessTokenExpiry": "" //不用填
+}
