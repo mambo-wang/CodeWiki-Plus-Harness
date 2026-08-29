@@ -1,0 +1,499 @@
+{
+  "components": [
+    {
+      "id": "cmd\\claw\\main.go::main",
+      "type": "function",
+      "file": "cmd\\claw\\main.go"
+    },
+    {
+      "id": "helloworld.go::main",
+      "type": "function",
+      "file": "helloworld.go"
+    },
+    {
+      "id": "internal\\context\\compactor.go::Compactor",
+      "type": "struct",
+      "file": "internal\\context\\compactor.go"
+    },
+    {
+      "id": "internal\\context\\compactor.go::Compactor.Compact",
+      "type": "method",
+      "file": "internal\\context\\compactor.go"
+    },
+    {
+      "id": "internal\\context\\compactor.go::Compactor.estimateLength",
+      "type": "method",
+      "file": "internal\\context\\compactor.go"
+    },
+    {
+      "id": "internal\\context\\compactor.go::NewCompactor",
+      "type": "function",
+      "file": "internal\\context\\compactor.go"
+    },
+    {
+      "id": "internal\\context\\composer.go::NewPromptComposer",
+      "type": "function",
+      "file": "internal\\context\\composer.go"
+    },
+    {
+      "id": "internal\\context\\composer.go::PromptComposer",
+      "type": "struct",
+      "file": "internal\\context\\composer.go"
+    },
+    {
+      "id": "internal\\context\\composer.go::PromptComposer.Build",
+      "type": "method",
+      "file": "internal\\context\\composer.go"
+    },
+    {
+      "id": "internal\\context\\skill.go::NewSkillLoader",
+      "type": "function",
+      "file": "internal\\context\\skill.go"
+    },
+    {
+      "id": "internal\\context\\skill.go::Skill",
+      "type": "struct",
+      "file": "internal\\context\\skill.go"
+    },
+    {
+      "id": "internal\\context\\skill.go::SkillLoader",
+      "type": "struct",
+      "file": "internal\\context\\skill.go"
+    },
+    {
+      "id": "internal\\context\\skill.go::SkillLoader.LoadAll",
+      "type": "method",
+      "file": "internal\\context\\skill.go"
+    },
+    {
+      "id": "internal\\context\\skill.go::parseSkillMD",
+      "type": "function",
+      "file": "internal\\context\\skill.go"
+    },
+    {
+      "id": "internal\\engine\\loop.go::AgentEngine",
+      "type": "struct",
+      "file": "internal\\engine\\loop.go"
+    },
+    {
+      "id": "internal\\engine\\loop.go::AgentEngine.Run",
+      "type": "method",
+      "file": "internal\\engine\\loop.go"
+    },
+    {
+      "id": "internal\\engine\\loop.go::NewAgentEngine",
+      "type": "function",
+      "file": "internal\\engine\\loop.go"
+    },
+    {
+      "id": "internal\\engine\\reporter.go::Reporter",
+      "type": "interface",
+      "file": "internal\\engine\\reporter.go"
+    },
+    {
+      "id": "internal\\engine\\session.go::NewSession",
+      "type": "function",
+      "file": "internal\\engine\\session.go"
+    },
+    {
+      "id": "internal\\engine\\session.go::Session",
+      "type": "struct",
+      "file": "internal\\engine\\session.go"
+    },
+    {
+      "id": "internal\\engine\\session.go::Session.Append",
+      "type": "method",
+      "file": "internal\\engine\\session.go"
+    },
+    {
+      "id": "internal\\engine\\session.go::Session.GetWorkingMemory",
+      "type": "method",
+      "file": "internal\\engine\\session.go"
+    },
+    {
+      "id": "internal\\engine\\session.go::SessionManager",
+      "type": "struct",
+      "file": "internal\\engine\\session.go"
+    },
+    {
+      "id": "internal\\engine\\session.go::SessionManager.GetOrCreate",
+      "type": "method",
+      "file": "internal\\engine\\session.go"
+    },
+    {
+      "id": "internal\\engine\\session_test.go::TestGetWorkingMemory_FullReturn",
+      "type": "function",
+      "file": "internal\\engine\\session_test.go"
+    },
+    {
+      "id": "internal\\engine\\session_test.go::TestGetWorkingMemory_OrphanToolResult",
+      "type": "function",
+      "file": "internal\\engine\\session_test.go"
+    },
+    {
+      "id": "internal\\engine\\session_test.go::TestGetWorkingMemory_Truncation",
+      "type": "function",
+      "file": "internal\\engine\\session_test.go"
+    },
+    {
+      "id": "internal\\engine\\session_test.go::TestSessionConcurrentSafety",
+      "type": "function",
+      "file": "internal\\engine\\session_test.go"
+    },
+    {
+      "id": "internal\\engine\\session_test.go::TestSessionManagerGetOrCreate",
+      "type": "function",
+      "file": "internal\\engine\\session_test.go"
+    },
+    {
+      "id": "internal\\engine\\session_test.go::TestSessionPhysicalIsolation",
+      "type": "function",
+      "file": "internal\\engine\\session_test.go"
+    },
+    {
+      "id": "internal\\engine\\session_test.go::TestWorkingMemoryForgetting",
+      "type": "function",
+      "file": "internal\\engine\\session_test.go"
+    },
+    {
+      "id": "internal\\engine\\terminal_repoter.go::NewTerminalReporter",
+      "type": "function",
+      "file": "internal\\engine\\terminal_repoter.go"
+    },
+    {
+      "id": "internal\\engine\\terminal_repoter.go::TerminalReporter",
+      "type": "struct",
+      "file": "internal\\engine\\terminal_repoter.go"
+    },
+    {
+      "id": "internal\\engine\\terminal_repoter.go::TerminalReporter.OnMessage",
+      "type": "method",
+      "file": "internal\\engine\\terminal_repoter.go"
+    },
+    {
+      "id": "internal\\engine\\terminal_repoter.go::TerminalReporter.OnThinking",
+      "type": "method",
+      "file": "internal\\engine\\terminal_repoter.go"
+    },
+    {
+      "id": "internal\\engine\\terminal_repoter.go::TerminalReporter.OnToolCall",
+      "type": "method",
+      "file": "internal\\engine\\terminal_repoter.go"
+    },
+    {
+      "id": "internal\\engine\\terminal_repoter.go::TerminalReporter.OnToolResult",
+      "type": "method",
+      "file": "internal\\engine\\terminal_repoter.go"
+    },
+    {
+      "id": "internal\\feishu\\bot.go::FeishuBot",
+      "type": "struct",
+      "file": "internal\\feishu\\bot.go"
+    },
+    {
+      "id": "internal\\feishu\\bot.go::FeishuBot.GetEventDispatcher",
+      "type": "method",
+      "file": "internal\\feishu\\bot.go"
+    },
+    {
+      "id": "internal\\feishu\\bot.go::FeishuBot.StartWebSocket",
+      "type": "method",
+      "file": "internal\\feishu\\bot.go"
+    },
+    {
+      "id": "internal\\feishu\\bot.go::FeishuBot.createEventDispatcher",
+      "type": "method",
+      "file": "internal\\feishu\\bot.go"
+    },
+    {
+      "id": "internal\\feishu\\bot.go::FeishuBot.handleAgentRun",
+      "type": "method",
+      "file": "internal\\feishu\\bot.go"
+    },
+    {
+      "id": "internal\\feishu\\bot.go::FeishuReporter",
+      "type": "struct",
+      "file": "internal\\feishu\\bot.go"
+    },
+    {
+      "id": "internal\\feishu\\bot.go::FeishuReporter.OnMessage",
+      "type": "method",
+      "file": "internal\\feishu\\bot.go"
+    },
+    {
+      "id": "internal\\feishu\\bot.go::FeishuReporter.OnThinking",
+      "type": "method",
+      "file": "internal\\feishu\\bot.go"
+    },
+    {
+      "id": "internal\\feishu\\bot.go::FeishuReporter.OnToolCall",
+      "type": "method",
+      "file": "internal\\feishu\\bot.go"
+    },
+    {
+      "id": "internal\\feishu\\bot.go::FeishuReporter.OnToolResult",
+      "type": "method",
+      "file": "internal\\feishu\\bot.go"
+    },
+    {
+      "id": "internal\\feishu\\bot.go::FeishuReporter.sendMsg",
+      "type": "method",
+      "file": "internal\\feishu\\bot.go"
+    },
+    {
+      "id": "internal\\feishu\\bot.go::NewFeishuBot",
+      "type": "function",
+      "file": "internal\\feishu\\bot.go"
+    },
+    {
+      "id": "internal\\provider\\claude.go::MiniMaxProvider",
+      "type": "struct",
+      "file": "internal\\provider\\claude.go"
+    },
+    {
+      "id": "internal\\provider\\claude.go::MiniMaxProvider.Generate",
+      "type": "method",
+      "file": "internal\\provider\\claude.go"
+    },
+    {
+      "id": "internal\\provider\\claude.go::NewAnthropicProvider",
+      "type": "function",
+      "file": "internal\\provider\\claude.go"
+    },
+    {
+      "id": "internal\\provider\\config.go::AppConfig",
+      "type": "struct",
+      "file": "internal\\provider\\config.go"
+    },
+    {
+      "id": "internal\\provider\\config.go::AppConfig.GetModelConfig",
+      "type": "method",
+      "file": "internal\\provider\\config.go"
+    },
+    {
+      "id": "internal\\provider\\config.go::FeishuConfig",
+      "type": "struct",
+      "file": "internal\\provider\\config.go"
+    },
+    {
+      "id": "internal\\provider\\config.go::LoadConfig",
+      "type": "function",
+      "file": "internal\\provider\\config.go"
+    },
+    {
+      "id": "internal\\provider\\config.go::ModelConfig",
+      "type": "struct",
+      "file": "internal\\provider\\config.go"
+    },
+    {
+      "id": "internal\\provider\\interface.go::LLMProvider",
+      "type": "interface",
+      "file": "internal\\provider\\interface.go"
+    },
+    {
+      "id": "internal\\provider\\openpi.go::NewOpenAIProvider",
+      "type": "function",
+      "file": "internal\\provider\\openpi.go"
+    },
+    {
+      "id": "internal\\provider\\openpi.go::OpenAIProvider",
+      "type": "struct",
+      "file": "internal\\provider\\openpi.go"
+    },
+    {
+      "id": "internal\\provider\\openpi.go::OpenAIProvider.Generate",
+      "type": "method",
+      "file": "internal\\provider\\openpi.go"
+    },
+    {
+      "id": "internal\\schema\\message.go::Message",
+      "type": "struct",
+      "file": "internal\\schema\\message.go"
+    },
+    {
+      "id": "internal\\schema\\message.go::ToolCall",
+      "type": "struct",
+      "file": "internal\\schema\\message.go"
+    },
+    {
+      "id": "internal\\schema\\message.go::ToolDefinition",
+      "type": "struct",
+      "file": "internal\\schema\\message.go"
+    },
+    {
+      "id": "internal\\schema\\message.go::ToolResult",
+      "type": "struct",
+      "file": "internal\\schema\\message.go"
+    },
+    {
+      "id": "internal\\tools\\bash.go::BashTool",
+      "type": "struct",
+      "file": "internal\\tools\\bash.go"
+    },
+    {
+      "id": "internal\\tools\\bash.go::BashTool.Definition",
+      "type": "method",
+      "file": "internal\\tools\\bash.go"
+    },
+    {
+      "id": "internal\\tools\\bash.go::BashTool.Execute",
+      "type": "method",
+      "file": "internal\\tools\\bash.go"
+    },
+    {
+      "id": "internal\\tools\\bash.go::BashTool.Name",
+      "type": "method",
+      "file": "internal\\tools\\bash.go"
+    },
+    {
+      "id": "internal\\tools\\bash.go::NewBashTool",
+      "type": "function",
+      "file": "internal\\tools\\bash.go"
+    },
+    {
+      "id": "internal\\tools\\bash.go::bashArgs",
+      "type": "struct",
+      "file": "internal\\tools\\bash.go"
+    },
+    {
+      "id": "internal\\tools\\edit_file.go::EditFileTool",
+      "type": "struct",
+      "file": "internal\\tools\\edit_file.go"
+    },
+    {
+      "id": "internal\\tools\\edit_file.go::EditFileTool.Definition",
+      "type": "method",
+      "file": "internal\\tools\\edit_file.go"
+    },
+    {
+      "id": "internal\\tools\\edit_file.go::EditFileTool.Execute",
+      "type": "method",
+      "file": "internal\\tools\\edit_file.go"
+    },
+    {
+      "id": "internal\\tools\\edit_file.go::EditFileTool.Name",
+      "type": "method",
+      "file": "internal\\tools\\edit_file.go"
+    },
+    {
+      "id": "internal\\tools\\edit_file.go::NewEditFileTool",
+      "type": "function",
+      "file": "internal\\tools\\edit_file.go"
+    },
+    {
+      "id": "internal\\tools\\edit_file.go::editFileArgs",
+      "type": "struct",
+      "file": "internal\\tools\\edit_file.go"
+    },
+    {
+      "id": "internal\\tools\\edit_file.go::fuzzyReplace",
+      "type": "function",
+      "file": "internal\\tools\\edit_file.go"
+    },
+    {
+      "id": "internal\\tools\\edit_file.go::lineByLineReplace",
+      "type": "function",
+      "file": "internal\\tools\\edit_file.go"
+    },
+    {
+      "id": "internal\\tools\\read_file.go::NewReadFileTool",
+      "type": "function",
+      "file": "internal\\tools\\read_file.go"
+    },
+    {
+      "id": "internal\\tools\\read_file.go::ReadFileTool",
+      "type": "struct",
+      "file": "internal\\tools\\read_file.go"
+    },
+    {
+      "id": "internal\\tools\\read_file.go::ReadFileTool.Definition",
+      "type": "method",
+      "file": "internal\\tools\\read_file.go"
+    },
+    {
+      "id": "internal\\tools\\read_file.go::ReadFileTool.Execute",
+      "type": "method",
+      "file": "internal\\tools\\read_file.go"
+    },
+    {
+      "id": "internal\\tools\\read_file.go::ReadFileTool.Name",
+      "type": "method",
+      "file": "internal\\tools\\read_file.go"
+    },
+    {
+      "id": "internal\\tools\\read_file.go::readFileArgs",
+      "type": "struct",
+      "file": "internal\\tools\\read_file.go"
+    },
+    {
+      "id": "internal\\tools\\registry.go::BaseTool",
+      "type": "interface",
+      "file": "internal\\tools\\registry.go"
+    },
+    {
+      "id": "internal\\tools\\registry.go::NewRegistry",
+      "type": "function",
+      "file": "internal\\tools\\registry.go"
+    },
+    {
+      "id": "internal\\tools\\registry.go::Registry",
+      "type": "interface",
+      "file": "internal\\tools\\registry.go"
+    },
+    {
+      "id": "internal\\tools\\registry.go::registryImpl",
+      "type": "struct",
+      "file": "internal\\tools\\registry.go"
+    },
+    {
+      "id": "internal\\tools\\registry.go::registryImpl.Execute",
+      "type": "method",
+      "file": "internal\\tools\\registry.go"
+    },
+    {
+      "id": "internal\\tools\\registry.go::registryImpl.GetAvailableTools",
+      "type": "method",
+      "file": "internal\\tools\\registry.go"
+    },
+    {
+      "id": "internal\\tools\\registry.go::registryImpl.Register",
+      "type": "method",
+      "file": "internal\\tools\\registry.go"
+    },
+    {
+      "id": "internal\\tools\\write_file.go::NewWriteFileTool",
+      "type": "function",
+      "file": "internal\\tools\\write_file.go"
+    },
+    {
+      "id": "internal\\tools\\write_file.go::WriteFileTool",
+      "type": "struct",
+      "file": "internal\\tools\\write_file.go"
+    },
+    {
+      "id": "internal\\tools\\write_file.go::WriteFileTool.Definition",
+      "type": "method",
+      "file": "internal\\tools\\write_file.go"
+    },
+    {
+      "id": "internal\\tools\\write_file.go::WriteFileTool.Execute",
+      "type": "method",
+      "file": "internal\\tools\\write_file.go"
+    },
+    {
+      "id": "internal\\tools\\write_file.go::WriteFileTool.Name",
+      "type": "method",
+      "file": "internal\\tools\\write_file.go"
+    },
+    {
+      "id": "internal\\tools\\write_file.go::writeFileArgs",
+      "type": "struct",
+      "file": "internal\\tools\\write_file.go"
+    },
+    {
+      "id": "server.go::main",
+      "type": "function",
+      "file": "server.go"
+    }
+  ]
+}

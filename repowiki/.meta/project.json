@@ -1,0 +1,5 @@
+{
+  "repo_name": "go-my-harness",
+  "output_dir": "repowiki",
+  "cache_db": "go-my-harness/.codewiki/analysis_cache.db"
+}

@@ -1,0 +1,14 @@
+{
+  "unmatched_ids": [],
+  "unmatched_count": 0,
+  "leftover_component_ids": [
+    "internal\\engine\\session_test.go::TestGetWorkingMemory_FullReturn",
+    "internal\\engine\\session_test.go::TestGetWorkingMemory_OrphanToolResult",
+    "internal\\engine\\session_test.go::TestGetWorkingMemory_Truncation",
+    "internal\\engine\\session_test.go::TestSessionConcurrentSafety",
+    "internal\\engine\\session_test.go::TestSessionManagerGetOrCreate",
+    "internal\\engine\\session_test.go::TestSessionPhysicalIsolation",
+    "internal\\engine\\session_test.go::TestWorkingMemoryForgetting"
+  ],
+  "leftover_component_count": 7
+}

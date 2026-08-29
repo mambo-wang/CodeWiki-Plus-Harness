@@ -1,0 +1,33 @@
+{
+  "session_id": "d1706395765c",
+  "repo_name": "go-my-harness",
+  "repo_path": "D:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness\\go-my-harness",
+  "output_dir": "D:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness\\repowiki",
+  "total_components": 99,
+  "total_leaf_nodes": 32,
+  "languages": {
+    "go": 99
+  },
+  "leaf_nodes_preview": [
+    "internal\\context\\compactor.go::Compactor",
+    "internal\\provider\\config.go::ModelConfig",
+    "internal\\tools\\registry.go::registryImpl",
+    "internal\\tools\\bash.go::BashTool",
+    "internal\\provider\\openpi.go::OpenAIProvider",
+    "internal\\tools\\read_file.go::ReadFileTool",
+    "internal\\engine\\loop.go::AgentEngine",
+    "internal\\context\\skill.go::Skill",
+    "internal\\tools\\write_file.go::writeFileArgs",
+    "internal\\engine\\terminal_repoter.go::TerminalReporter",
+    "internal\\provider\\interface.go::LLMProvider",
+    "internal\\schema\\message.go::ToolDefinition",
+    "internal\\context\\composer.go::PromptComposer",
+    "internal\\schema\\message.go::ToolResult",
+    "internal\\tools\\read_file.go::readFileArgs",
+    "internal\\tools\\write_file.go::WriteFileTool",
+    "internal\\tools\\edit_file.go::editFileArgs",
+    "internal\\feishu\\bot.go::FeishuBot",
+    "internal\\tools\\bash.go::bashArgs",
+    "internal\\engine\\reporter.go::Reporter"
+  ]
+}
