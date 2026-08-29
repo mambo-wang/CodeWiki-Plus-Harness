@@ -1,5 +1,5 @@
 {
-  "host": "http://127.0.0.1",
+  "host": "http://10.142.150.38",
   "backendPort": "8082",
   "frontendPort": "",
   "username": "",

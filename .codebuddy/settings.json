@@ -1,10 +1,10 @@
 {
   "hooks": {
     "SessionStart": [
-      { "matcher": "startup", "hooks": [ { "type": "command", "command": "\"d:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness/codewiki-plus/.venv/Scripts/python.exe\" \"d:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness/.codebuddy/hooks/task_session_start.py\"", "timeout": 15 } ] }
+      { "matcher": "startup", "hooks": [ { "type": "command", "command": "python \".codebuddy/hooks/task_session_start.py\"", "timeout": 15 } ] }
     ],
     "SessionEnd": [
-      { "matcher": "other", "hooks": [ { "type": "command", "command": "\"d:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness/codewiki-plus/.venv/Scripts/python.exe\" \"d:\\PersonalData\\wangbao\\CodeWiki-Plus-Harness/.codebuddy/hooks/capture_session_end.py\"", "timeout": 30 } ] }
+      { "matcher": "other", "hooks": [ { "type": "command", "command": "python \".codebuddy/hooks/capture_session_end.py\"", "timeout": 30 } ] }
     ]
   }
 }
