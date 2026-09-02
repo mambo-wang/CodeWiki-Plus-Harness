@@ -2,6 +2,9 @@
 # bootstrap.sh — 初始化 Harness 工作区：克隆全部业务子仓
 # 用法：在本仓根目录执行 ./bootstrap.sh
 # 幂等：已存在的目录自动跳过，可重复执行。
+# 注意：登记表骨架行 `declare -A repos=(` 与配对的 `)` 由 CodeWiki 的
+# init_workspace / add_workspace_repo 工具定位维护，请勿改动这两行的结构
+# （表内条目内容可自由增删改）。
 set -euo pipefail
 
 root="$(cd "$(dirname "$0")" && pwd)"
@@ -9,7 +12,8 @@ root="$(cd "$(dirname "$0")" && pwd)"
 # 业务仓登记表：目录名 -> 仓库 URL
 # 新增业务仓时同步更新 .gitignore 与 repowiki/wiki/repo-map.md
 declare -A repos=(
-    ["codewiki-plus"]="https://github.com/mambo-wang/CodeWiki-Plus.git"
+
+    ["CodeWiki-Plus"]="https://github.com/mambo-wang/CodeWiki-Plus.git"
 )
 
 for name in "${!repos[@]}"; do
