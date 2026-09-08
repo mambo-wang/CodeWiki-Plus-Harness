@@ -6,12 +6,14 @@ metadata:
   date: 2026-09-08
   related_modules: ["task_manager"]
   severity: medium
-  source_ref: "raw\\conv-teammate-message-from-team-lead-from-summary-Initial-task-as.md"
+  source_ref: "conversations/conv-teammate-message-from-team-lead-from-summary-Initial-task-as.md"
   scene: "蒸馏工作流"
 status: draft
 author: iamwangbao-163-com
 generated: { by: codewiki/5.7.0, at: 2026-09-08T02:48:11Z }
 stale_after: 2027-03-07
+origin: conversation
+
 ---
 
 ## 背景
