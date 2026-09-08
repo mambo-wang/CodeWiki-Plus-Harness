@@ -82,3 +82,22 @@
 - harness 仓 `.gitignore` 改动需人工提交；分支 `test/centralized-mcp-sweep` 无 upstream，要推送先 `git push -u origin test/centralized-mcp-sweep`。
 - 用户最终语义确认：写前更新=首个写工具 ff-only pull 一次（用户已认可脏树可拉）；写后推送=auto_push，analyze 系列产出由后续写工具 push 一并带上，不单独接。
 - 是否把本主题写成 decision 笔记：用户最初对「保持 advisory+auto_push:false」选不写；随后实际把 auto_push 改 true 并推动全部改造——下轮应先确认是否补记最终方案，避免重复讨论。
+
+### 2026-09-08 10:46
+
+## 2026-09-08 git_sync 自动同步改造已完成（代码在 D:\repos\CodeWiki-CN，harness 仓未提交任何代码）
+
+### 已完成
+- `src/git_sync.py`：新增 `defer_push`（按 repo_root 抑制 auto_push）与 `auto_push_into_result` helper；移除 auto_push 与 session_ff_only 的 D17 gate；删除 `_is_workspace_root_repo()`；新增无 upstream 短路；session_ff_only 移除 clean-tree 预检改由 git 文件级裁决。
+- `mcp/registry.py`：dispatch 层 `_PUSH_ON_WRITE` 收口 10 个写工具（edit_doc_file/confirm_note/reject_note/batch_set_status/ingest_source/retract_source/consolidate_notes/refresh_doctrine/flag_issue/stamp_evidence）。
+- `note_ingest.py` / `doc_writer.py`：ingest_note、write_doc_file 自推锚点；`batch_ingest.py`：defer_push 包循环。
+- `capture_conversation.py`/`analysis.py`/`workspace_analyzer.py`/`distill_conversation.py`：session_ff_only 写前拉取铺到 analyze_repo/analyze_workspace/distill（首个写工具拉一次语义）；清掉 7 处过时 `gated (D17)` 注释。
+- harness 仓 `.gitignore`：补回 `repowiki/raw/`、新增 `repowiki/temp/`（此改动在仓库根，auto_push 不带它，**需人工提交**）。
+- py_compile + mock 干跑验证通过（defer 抑制生效、无 upstream 短路不推送）。
+
+### 待办
+- **重启 CodeWiki-CN 的 MCP server**（schema 进程级缓存，否则新配置与代码不生效）。
+- 代码改动在 CodeWiki-CN 仓，**需用户自行提交**。
+- harness 仓 `.gitignore` 改动需人工提交；分支 `test/centralized-mcp-sweep` 无 upstream，要推送先 `git push -u origin test/centralized-mcp-sweep`。
+- 用户最终语义确认：写前更新=首个写工具 ff-only pull 一次（用户已认可脏树可拉）；写后推送=auto_push，analyze 系列产出由后续写工具 push 一并带上，不单独接。
+- 是否把本主题写成 decision 笔记：用户最初对「保持 advisory+auto_push:false」选不写；随后实际把 auto_push 改 true 并推动全部改造——下轮应先确认是否补记最终方案，避免重复讨论。

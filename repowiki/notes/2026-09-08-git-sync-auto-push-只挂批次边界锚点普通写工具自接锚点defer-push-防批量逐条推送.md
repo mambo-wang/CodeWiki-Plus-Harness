@@ -7,7 +7,7 @@ metadata:
   task_id: 维护
   related_modules: ["git_sync", "mcp-registry"]
   severity: high
-  source_ref: "raw\\conv-当前是集中式多仓工作区，是不是应该在生成wiki或者说蒸馏对话后自动提交推送.md"
+  source_ref: "conversations/conv-当前是集中式多仓工作区，是不是应该在生成wiki或者说蒸馏对话后自动提交推送.md"
   scene: "git_sync 自动同步改造"
 status: draft
 author: iamwangbao-163-com
