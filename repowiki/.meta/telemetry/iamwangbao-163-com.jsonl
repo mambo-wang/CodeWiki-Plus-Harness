@@ -22,3 +22,5 @@
 {"t": "hit", "doc": "wiki/doctrine.md", "at": "2026-09-05", "n": 1}
 {"t": "hit", "doc": "notes/2026-09-04-mcp-全量走查方法分阶段工具矩阵-重启后服务端复验.md", "at": "2026-09-05", "n": 1}
 {"t": "adopted", "doc": "notes/2026-09-04-未提交的工作区改动会静默回退已落盘的提交内容.md", "at": "2026-09-08T10:00:56", "key": "iamwangbao-163-com/d3fa2a317cd64d0b9b6141380d71998d"}
+{"t": "adopted", "doc": "notes/2026-09-08-git-sync-移除-d17-workspace-root-gatecommit-是子树级安全但-push拉取以整条.md", "at": "2026-09-08T11:00:44", "key": "iamwangbao-163-com/0b9e8fc328a04f4c8b182495289a7bd6"}
+{"t": "adopted", "doc": "notes/2026-09-08-schemayaml-有进程级缓存改-auto-pushgit-sync-等配置后必须重启-mcp-server-才生效.md", "at": "2026-09-08T11:00:44", "key": "iamwangbao-163-com/0b9e8fc328a04f4c8b182495289a7bd6"}
