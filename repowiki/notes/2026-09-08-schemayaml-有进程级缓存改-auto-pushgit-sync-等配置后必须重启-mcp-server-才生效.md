@@ -1,20 +1,27 @@
 ---
 type: pitfall
-title: "schema.yaml 有进程级缓存：改 auto_push/git_sync 等配置后必须重启 MCP server 才生效"
-tags: ["pitfall"]
+title: schema.yaml 有进程级缓存：改 auto_push/git_sync 等配置后必须重启 MCP server 才生效
+tags:
+- pitfall
 metadata:
   date: 2026-09-08
   task_id: 维护
-  related_modules: ["page_router", "git_sync"]
+  related_modules:
+  - page_router
+  - git_sync
   severity: medium
-  source_ref: "conversations/conv-当前是集中式多仓工作区，是不是应该在生成wiki或者说蒸馏对话后自动提交推送.md"
-  scene: "git_sync 配置排查"
-status: draft
+  source_ref: conversations/conv-当前是集中式多仓工作区，是不是应该在生成wiki或者说蒸馏对话后自动提交推送.md
+  scene: git_sync 配置排查
+status: stable
 author: iamwangbao-163-com
-generated: { by: codewiki/5.7.0, at: 2026-09-08T02:51:07Z }
-stale_after: 2027-03-07
+generated:
+  by: codewiki/5.7.0
+  at: 2026-09-08 02:51:07+00:00
+stale_after: '2027-03-07'
 origin: conversation
-
+verified:
+- by: codewiki/5.7.0
+  at: '2026-09-08T02:52:20Z'
 ---
 
 ## 背景
