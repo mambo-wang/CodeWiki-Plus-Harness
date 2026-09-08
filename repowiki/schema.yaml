@@ -127,7 +127,7 @@ conventions:
   # session_ff_only / auto_push（第二刀）仅限"repowiki 所在仓不含业务
   # 代码"的 harness/工作区根仓显式开启。
   git_sync:
-    mode: advisory
+    mode: session_ff_only 
     auto_push: true
   # 全局默认标签列表，会自动追加到每个文档的 frontmatter tags 中。
   # 例如 [project-x, v2] 会让所有文档带上这些标签，便于跨项目检索
