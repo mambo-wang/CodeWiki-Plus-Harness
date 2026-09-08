@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "total": 1,
+  "succeeded": 1,
+  "failed": 0,
+  "results": [
+    {
+      "index": 0,
+      "kind": "note",
+      "status": "ok",
+      "detail": {
+        "status": "ingested",
+        "note_status": "draft",
+        "note_path": "D:\\repos\\CodeWiki-Plus-Harness\\repowiki\\notes\\2026-09-02-集中式布局的知识分区模型.md",
+        "note_type": "architecture",
+        "auto_matched_modules": [],
+        "related_modules": [],
+        "tags": [
+          "architecture",
+          "codewiki"
+        ],
+        "hint": "Note saved with status=draft; query_wiki will show it with an [unconfirmed] prefix. Call confirm_note(note_file=...) after review to promote it to verified knowledge."
+      }
+    }
+  ]
+}
