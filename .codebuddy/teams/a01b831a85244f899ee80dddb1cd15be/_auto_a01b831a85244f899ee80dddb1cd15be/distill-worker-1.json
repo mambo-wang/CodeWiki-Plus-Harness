@@ -1,0 +1,11 @@
+[
+  {
+    "id": "msg-1788511540883-50y8f6",
+    "from": "team-lead",
+    "to": "distill-worker-1",
+    "type": "message",
+    "content": "收到，质量很好。两项决策如下：\n\n【1. 任务记忆】不要重跑蒸馏（raw 已 distilled，prepare 会 noop）。请把你提取的 8 条任务进度改用 add_task_memory 逐条补写到任务「维护」：\n- arguments: {\"task_id\": \"维护\", \"repo_path\": \"d:/repos/CodeWiki-Plus-Harness\", \"content\": \"<markdown>\"}\n- 内容聚焦**进度事实**（哪条已修/未修、未提交改动的仓与文件数、待办），不要写成通用经验（那部分已在 11 条 draft 笔记里）\n- 完成回报条数即可\n\n【2. 那条 deprecated 笔记】不要动它。我已定位根因，不是笔记内容问题，是**召回链路没做 status 过滤**：\n- query_wiki 主路径确实跳过 deprecated（note_query.py L643-644 by_file / L989-990 BM25）\n- 但 `query_wiki(mode=\"check\")`（L434-444）与 distill 去重的 BM25 recall（`_bm25_recall`，L570-607，apply_authority=False/apply_usage=False）**都没有 status 过滤**，所以 `notes/2026-09-02-组件-id-使用-windows-反斜杠且不带仓名前缀.md` 虽已 deprecated 仍被反复召回为弱候选。\n这条会作为「文章 §7.5 声明与实现不符」的第 10 条补充进验证报告，由用户决定是否修。\n\n补写完成后等我 shutdown 指令，不要自行退出。",
+    "timestamp": "2026-09-04T08:45:40.883Z",
+    "read": true
+  }
+]

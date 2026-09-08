@@ -1,0 +1,19 @@
+{
+  "name": "_auto_a01b831a85244f899ee80dddb1cd15be",
+  "mainConversationId": "a01b831a85244f899ee80dddb1cd15be",
+  "workspacePath": "d:\\repos\\CodeWiki-Plus-Harness",
+  "createdAt": "2026-09-04T08:33:58.699Z",
+  "options": {
+    "workspacePath": "d:\\repos\\CodeWiki-Plus-Harness",
+    "isAutoTeam": true
+  },
+  "isAutoTeam": true,
+  "members": [
+    {
+      "memberId": "distill-worker-1@_auto_a01b831a85244f899ee80dddb1cd15be",
+      "name": "distill-worker-1",
+      "role": "补蒸馏未关联对话",
+      "sessionId": "a35a88f4ffb04446baa6a6551c2bd6c8"
+    }
+  ]
+}
