@@ -1,20 +1,27 @@
 ---
 type: architecture
-title: "git_sync auto_push 只挂批次边界锚点：普通写工具自接锚点、defer_push 防批量逐条推送"
-tags: ["architecture"]
+title: git_sync auto_push 只挂批次边界锚点：普通写工具自接锚点、defer_push 防批量逐条推送
+tags:
+- architecture
 metadata:
   date: 2026-09-08
   task_id: 维护
-  related_modules: ["git_sync", "mcp-registry"]
+  related_modules:
+  - git_sync
+  - mcp-registry
   severity: high
-  source_ref: "conversations/conv-当前是集中式多仓工作区，是不是应该在生成wiki或者说蒸馏对话后自动提交推送.md"
-  scene: "git_sync 自动同步改造"
-status: draft
+  source_ref: conversations/conv-当前是集中式多仓工作区，是不是应该在生成wiki或者说蒸馏对话后自动提交推送.md
+  scene: git_sync 自动同步改造
+status: stable
 author: iamwangbao-163-com
-generated: { by: codewiki/5.7.0, at: 2026-09-08T02:51:02Z }
-stale_after: 2027-09-08
+generated:
+  by: codewiki/5.7.0
+  at: 2026-09-08 02:51:02+00:00
+stale_after: '2027-09-08'
 origin: conversation
-
+verified:
+- by: codewiki/5.7.0
+  at: '2026-09-08T02:52:05Z'
 ---
 
 ## 背景

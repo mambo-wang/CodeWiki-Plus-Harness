@@ -1,19 +1,26 @@
 ---
 type: lesson
-title: "蒸馏后任务记忆落盘为 0 时不要重跑蒸馏，改用 add_task_memory 逐条补写"
-tags: ["codewiki", "lesson"]
+title: 蒸馏后任务记忆落盘为 0 时不要重跑蒸馏，改用 add_task_memory 逐条补写
+tags:
+- codewiki
+- lesson
 metadata:
   date: 2026-09-08
-  related_modules: ["task_manager"]
+  related_modules:
+  - task_manager
   severity: medium
-  source_ref: "conversations/conv-teammate-message-from-team-lead-from-summary-Initial-task-as.md"
-  scene: "蒸馏工作流"
-status: draft
+  source_ref: conversations/conv-teammate-message-from-team-lead-from-summary-Initial-task-as.md
+  scene: 蒸馏工作流
+status: stable
 author: iamwangbao-163-com
-generated: { by: codewiki/5.7.0, at: 2026-09-08T02:48:11Z }
-stale_after: 2027-03-07
+generated:
+  by: codewiki/5.7.0
+  at: 2026-09-08 02:48:11+00:00
+stale_after: '2027-03-07'
 origin: conversation
-
+verified:
+- by: codewiki/5.7.0
+  at: '2026-09-08T02:52:05Z'
 ---
 
 ## 背景
