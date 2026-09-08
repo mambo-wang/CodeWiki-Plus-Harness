@@ -1,36 +1,28 @@
-# AGENTS.md — Harness 工作区约定
+<!-- CodeWiki Workspace Conventions -->
 
-本仓库是 CodeWiki-Plus 产品线的 harness 主仓库。业务代码仓以独立 clone 方式挂在本仓库子目录下（git 层面完全隔离，非 submodule）。Agent 在本工作区内工作时必须遵守以下约定。
+# AGENTS.md — CodeWiki-Plus-Harness 工作区约定（集中式布局）
 
-## 工作区结构与检索路由（两跳）
+本仓库是产品线的 harness 主仓库。业务代码仓以独立 clone 方式挂在本仓库子目录下（git 层面完全隔离，非 submodule）。本工作区采用**集中式知识布局**：全部知识（产品级 + 各业务仓）统一存放在本仓 `repowiki/`，业务仓目录内没有 `repowiki/`。
 
-知识分层存放，检索按两跳路由执行：
+## 工作区结构与检索路由（一跳）
 
-**第一跳（产品级）**：先查本仓 repowiki，获取产品概述、业务仓导航、跨仓约定。
+`repowiki/` 是唯一知识库：`wiki/modules/<业务仓目录>/` 按仓分区存放代码结构文档；`wiki/entities/`、`wiki/concepts/`、`wiki/comparisons/`、`wiki/queries/`、`wiki/sources/`、`notes/` 等为共享池，页面以 frontmatter `repo:`/`repos:` 标注适用仓（无标注＝产品线全局，对所有仓生效）。
 
-```
-query_wiki(query=..., output_dir=<harness根>/repowiki)
-```
-
-导航入口页：`repowiki/wiki/repo-map.md`（各业务仓职责、目录、repowiki 路径一览）。
-
-**第二跳（仓库级）**：命中某个业务仓后，下钻到该业务仓自己的 repowiki 获取模块/实体/笔记等深度知识。
+**检索（一跳）**：
 
 ```
-query_wiki(query=..., output_dir=<harness根>/codewiki-plus/repowiki)
-```
-
-**跨服务调用关系**：直接对工作区根做多仓分析检索。
-
-```
+query_wiki(query=...)                            # 覆盖产品级 + 全部业务仓
+query_wiki(query=..., repo=<业务仓目录>)          # 适用于该仓的知识＝该仓分区 + 带该仓标 + 全局
 query_cross_service(workspace_path=<harness根目录>)
 ```
 
+导航入口页：`repowiki/wiki/repo-map.md`（仓清单与分区索引）。
+
 ## 提交纪律（结构性红线）
 
-- 业务代码只在业务仓内提交；本仓只提交 harness 资产（repowiki 产品级知识、约定、脚本）。
-- 本仓 `.gitignore` 已排除全部业务仓目录。若在本仓 `git status` 中看到业务仓目录出现（如 `codewiki-plus/`），说明 `.gitignore` 失效或业务仓被错误 clone 进来——**立即停下排查，绝不可 `git add`**。
-- 业务仓内部的工作流遵循该业务仓自己的 AGENTS.md（如 `codewiki-plus/AGENTS.md`），本文件不覆盖。
+- 业务代码只在业务仓内提交；**全部知识产物在本仓提交**——集中式布局下业务仓是纯代码仓。
+- 本仓 `.gitignore` 已排除全部业务仓目录。若在本仓 `git status` 中看到业务仓目录出现，说明 `.gitignore` 失效或业务仓被错误 clone 进来——**立即停下排查，绝不可 `git add`**。
+- 业务仓自身的编码约定仍遵循该业务仓自己的 AGENTS.md（其知识库引用块已被移除），本文件不覆盖。
 
 ## 分支策略
 
@@ -40,18 +32,23 @@ query_cross_service(workspace_path=<harness根目录>)
 
 | 知识类型 | 写入位置 |
 |---------|---------|
-| 产品概述、跨仓架构、业务仓间协作约定 | 本仓 `repowiki/`（`ingest_note` / `write_doc_file`） |
-| 单个业务仓的业务概述 | 本仓 `repowiki/wiki/repo-map.md` 对应小节 |
-| 模块文档、pitfall、decision、lesson 等深度知识 | **业务仓自己的** `repowiki/` |
-| 跨服务调用拓扑 | `analyze_workspace(workspace_path=<harness根>)` 产出，位于 `workspace-wiki/` |
+| 产品概述、跨仓架构、全局编码规范 | `repowiki/` 相应页型目录，**不打** `repo:` 标（全局） |
+| 单个业务仓的业务概述 | `repowiki/wiki/repo-map.md` 对应小节 |
+| 模块文档（代码结构） | `repowiki/wiki/modules/<业务仓目录>/` |
+| entities/notes/pitfall/decision 等 | 共享池（`wiki/entities/`、`notes/`…），frontmatter `repo:`/`repos:` 标适用仓 |
+| 跨服务调用拓扑 | `analyze_workspace(workspace_path=<harness根>)` 产出（`wiki/overview.md` + `.meta/`） |
 
-原则：wiki 与它描述的代码同仓演进。描述某业务仓内部实现的知识绝不写入本仓。
+原则：说一个仓的内部实现 → 该仓分区或带该仓标；说多个仓或产品线 → 全局共享层。
 
 ## 新业务仓接入清单
 
-1. `bootstrap.ps1` / `bootstrap.sh` 的 repos 表登记仓库 URL 与目录名
+优先使用 CodeWiki MCP 工具 `add_workspace_repo(url=<克隆URL>)` 一步完成登记（目录名自动取仓库名）；集中模式下会自动建 `repowiki/wiki/modules/<仓名>/` 分区骨架，且**不在业务仓内建 `repowiki/`**。手工接入时须同步三处：
+
+1. `bootstrap.ps1` / `bootstrap.sh` 的 repos 登记表增加仓库目录名与 URL
 2. `.gitignore` 增加一行 `/<业务仓目录>/`
-3. `repowiki/wiki/repo-map.md` 补充该仓小节（职责、repowiki 路径、检索方式）
+3. `repowiki/wiki/repo-map.md` 补充该仓小节（职责、分区路径、检索方式）
+
+<!-- /CodeWiki Workspace Conventions -->
 
 <!-- CodeWiki LLM Wiki -->
 
@@ -165,67 +162,6 @@ query_cross_service(workspace_path=<harness根目录>)
 
 <!-- /CodeWiki LLM Wiki -->
 
-<!-- CodeWiki Workspace Conventions -->
-
-# AGENTS.md — CodeWiki-Plus-Harness 工作区约定
-
-本仓库是产品线的 harness 主仓库。业务代码仓以独立 clone 方式挂在本仓库子目录下（git 层面完全隔离，非 submodule）。Agent 在本工作区内工作时必须遵守以下约定。
-
-## 工作区结构与检索路由（两跳）
-
-知识分层存放，检索按两跳路由执行：
-
-**第一跳（产品级）**：先查本仓 repowiki，获取产品概述、业务仓导航、跨仓约定。
-
-```
-query_wiki(query=..., output_dir=<harness根>/repowiki)
-```
-
-导航入口页：`repowiki/wiki/repo-map.md`（各业务仓职责、目录、repowiki 路径一览）。
-
-**第二跳（仓库级）**：命中某个业务仓后，下钻到该业务仓自己的 repowiki 获取模块/实体/笔记等深度知识。
-
-```
-query_wiki(query=..., output_dir=<harness根>/<业务仓目录>/repowiki)
-```
-
-**跨服务调用关系**：直接对工作区根做多仓分析检索。
-
-```
-query_cross_service(workspace_path=<harness根目录>)
-```
-
-## 提交纪律（结构性红线）
-
-- 业务代码只在业务仓内提交；本仓只提交 harness 资产（repowiki 产品级知识、约定、脚本）。
-- 本仓 `.gitignore` 已排除全部业务仓目录。若在本仓 `git status` 中看到业务仓目录出现，说明 `.gitignore` 失效或业务仓被错误 clone 进来——**立即停下排查，绝不可 `git add`**。
-- 业务仓内部的工作流遵循该业务仓自己的 AGENTS.md，本文件不覆盖。
-
-## 分支策略
-
-本仓分支固定、变动不频繁；各业务仓自由选择主线或个人开发分支，互不感知、无需同步。不要在本仓为业务仓的分支做任何记录（没有指针、没有 manifest 锁定）。
-
-## 知识写入路由
-
-| 知识类型 | 写入位置 |
-|---------|---------|
-| 产品概述、跨仓架构、业务仓间协作约定 | 本仓 `repowiki/`（`ingest_note` / `write_doc_file`） |
-| 单个业务仓的业务概述 | 本仓 `repowiki/wiki/repo-map.md` 对应小节 |
-| 模块文档、pitfall、decision、lesson 等深度知识 | **业务仓自己的** `repowiki/` |
-| 跨服务调用拓扑 | `analyze_workspace(workspace_path=<harness根>)` 产出，位于本仓 `repowiki/`（overview.md + `.meta/`） |
-
-原则：wiki 与它描述的代码同仓演进。描述某业务仓内部实现的知识绝不写入本仓。
-
-## 新业务仓接入清单
-
-优先使用 CodeWiki MCP 工具 `add_workspace_repo(url=<克隆URL>)` 一步完成登记（目录名自动取仓库名）；手工接入时须同步三处：
-
-1. `bootstrap.ps1` / `bootstrap.sh` 的 repos 登记表增加仓库目录名与 URL
-2. `.gitignore` 增加一行 `/<业务仓目录>/`
-3. `repowiki/wiki/repo-map.md` 补充该仓小节（职责、repowiki 路径、检索方式）
-
-<!-- /CodeWiki Workspace Conventions -->
-
 <!-- TEAM-MEMORY-TASK:START -->
 ## Task memory (任务记忆)
 
@@ -239,7 +175,7 @@ query_cross_service(workspace_path=<harness根目录>)
    - **跳过**：本次会话不做任务关联
    新建任务两步弹框：选择「新建任务」后**必须**再次调用 `ask_followup_question` 弹出第二个输入框（标题「新建任务」，问题「请输入新任务名称」，带 2 个占位选项）。弹框自带输入框，用户可自由输入任务名后回车；以输入文字为准，立即调用 `create_task(title=<任务名>)` 创建并关联。若用户只点了占位选项，用文字追问确认真实任务名
 3. `get_task_context(task_id=<任务id>)` 拉取任务描述 + 记忆 + 关联笔记，作为继续工作的上下文
-4. **补蒸馏（委托 subagent，不阻塞）**：若返回的 `pending_raw_count > 0`（本任务有未蒸馏的历史对话），**不要自己在回答前逐条 read_file 蒸馏**——立即用 Task 工具 spawn「蒸馏 worker」subagent（`.codebuddy/agents/distill-worker.md`，已授权 codewiki MCP）后台执行：`distill_conversation(mode="prepare", task_id=<任务id>)` → 按清单逐条 read_file 提取 notes/memories → `distill_conversation(mode="submit", ...)`，然后**直接开始回答用户提问**。在自然停顿点（任务告一段落/用户空闲）重新 `get_task_context` 拉取最新上下文（任务记忆已直写落盘，`memories_written` 报告条数）→ 只向用户展示待确认的草稿笔记（`confirm_note` 确认后才正式落盘）。用户明确表示紧急时可先答复、草稿笔记在会话结束前展示确认即可
+4. **补蒸馏（委托 subagent，不阻塞）**：若返回的 `pending_raw_count > 0`（本任务有未蒸馏的历史对话），**不要自己在回答前逐条 read_file 蒸馏**——立即用 Task 工具 spawn 蒸馏子代理后台执行（CodeBuddy：spawn「蒸馏 worker」subagent，`.codebuddy/agents/distill-worker.md`，已授权 codewiki MCP；claude 家族 Qoder/Claude Code/Gemini CLI：**自定义子代理拿不到 MCP 权限**，改 spawn 内置 general-purpose 子代理，让它先读对应 `.qoder|.claude|.gemini/agents/distill-worker.md` 作为剧本）：`distill_conversation(mode="prepare", task_id=<任务id>)` → 按清单逐条 read_file 提取 notes/memories → `distill_conversation(mode="submit", ...)`，然后**直接开始回答用户提问**。在自然停顿点（任务告一段落/用户空闲）重新 `get_task_context` 拉取最新上下文（任务记忆已直写落盘，`memories_written` 报告条数）→ 只向用户展示待确认的草稿笔记（`confirm_note` 确认后才正式落盘）。用户明确表示紧急时可先答复、草稿笔记在会话结束前展示确认即可
 
 **工具入口：**
 - `codewiki/mcp/tools/task_manager.py` — `create_task` / `list_tasks` / `get_task` / `complete_task` / `delete_task` / `set_session_task` / `add_task_memory` / `get_task_context` / `compact_task_memories`
@@ -255,17 +191,3 @@ query_cross_service(workspace_path=<harness根目录>)
 - `memories/<user_id>.md` 追加式原子写(临时文件 + `os.replace`)，并发串行；**每人只写自己的文件**(文件所有权即 git 级互斥原语)；条目带 `### YYYY-MM-DD HH:MM` 时间戳头(ADR-0001：保持 markdown 不迁 JSONL，时间戳头是切条/截断/压缩的解析边界，存量无头文件运行时空行回退解析)。
 - `get_task_context`/`get_task` 的 memories 返回**分层有界**：热层=自己(+存量 legacy)文件取最近 20/5 条全量；温层=其他成员仅注入摘要+最近 2 条(超预算降级为一行线索)；`memories_total`/`memories_truncated` 标记截断、`max_memories` 参数翻页；`compaction_due=true` 表示热层超压缩阈值(40 条/24KB)且超出保留窗口，应跑 `compact_task_memories`(两段式无状态：`mode="prepare"` 取待压条目由调用方写摘要 → `mode="submit"` 落盘；**文件域压缩，只压自己的文件(+legacy 并入)，永不动他人文件**；原文按归属归档 `memories-archive/<user_id>.md` 不删，直写不走 confirm 闸门)。
 <!-- TEAM-MEMORY-TASK:END -->
-
-## Agent skills
-
-### Issue tracker
-
-Issues 与 specs 以 markdown 文件形式存放在仓库内 `.scratch/<feature>/`（本地 issue tracker）。See `docs/agents/issue-tracker.md`.
-
-### Triage labels
-
-采用五个默认标准标签：`needs-triage`、`needs-info`、`ready-for-agent`、`ready-for-human`、`wontfix`。See `docs/agents/triage-labels.md`.
-
-### Domain docs
-
-单上下文布局：根目录一个 `CONTEXT.md` + `docs/adr/`（尚不存在，按需懒创建）。See `docs/agents/domain.md`.

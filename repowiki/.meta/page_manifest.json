@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "pages": {
+    "wiki/modules/CodeWiki-Plus/knowledge_loop.md": {
+      "git_head": "569549b95e263e8593b47c2799f8ae0778058fea",
+      "components": [],
+      "files": [],
+      "source_fingerprint": "sha256:957588dad764e6bb8988e849db109954fe51dc76455e4407010db200aa30292a",
+      "repo": "CodeWiki-Plus",
+      "producer": "codewiki/5.5.1",
+      "written_at": "2026-09-02T15:17:20Z"
+    },
+    "wiki/scenarios/codewiki-mcp-分析链路-sop.md": {
+      "git_head": "92bf399c16c13947c209cf898363035d2ead9f44",
+      "components": [],
+      "files": [],
+      "source_fingerprint": null,
+      "repo": "CodeWiki-Plus",
+      "producer": "codewiki/5.5.1",
+      "written_at": "2026-09-04T01:23:56Z"
+    },
+    "wiki/modules/CodeWiki-Plus/probe_write_timing.md": {
+      "git_head": "569549b95e263e8593b47c2799f8ae0778058fea",
+      "components": [],
+      "files": [],
+      "source_fingerprint": null,
+      "repo": "CodeWiki-Plus",
+      "producer": "codewiki/5.5.1",
+      "written_at": "2026-09-02T22:37:23Z"
+    },
+    "wiki/concepts/roundtrip-probe.md": {
+      "git_head": "92bf399c16c13947c209cf898363035d2ead9f44",
+      "components": [],
+      "files": [],
+      "source_fingerprint": null,
+      "repo": "CodeWiki-Plus",
+      "producer": "codewiki/5.5.1",
+      "written_at": "2026-09-03T12:15:41Z"
+    }
+  }
+}
